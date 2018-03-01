@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">KeyBoardSamples</string>
+    <string name="app_name">KeyBoard Samples</string>
     <string name="button_show">Show</string>
     <string name="enter_a_message">Enter a message</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_an_email_address">Enter an email address</string>
+    <string name="enter_a_phone_number">Enter a phone number</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="nothing_entered">Nothing entered.</string>
+
+    <string-array name="labels_array">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
 </resources>
