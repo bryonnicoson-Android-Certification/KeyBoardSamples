@@ -1,5 +1,7 @@
 package com.bryonnicoson.keyboardsamples;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,5 +64,28 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         Log.d(TAG, "onNothingSelected: ");
+    }
+
+    public void showAlert(View view) {
+        // Note: build frequently called objects in onCreate
+        AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
+        myAlertBuilder.setTitle(R.string.alert_title);
+        myAlertBuilder.setMessage(R.string.alert_message);
+        // positive button click handler
+        myAlertBuilder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), R.string.pressed_ok, Toast.LENGTH_SHORT).show();
+            }
+        });
+        // negative button click handler
+        myAlertBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), R.string.pressed_cancel, Toast.LENGTH_SHORT).show();
+            }
+        });
+        // create and show alert dialog
+        myAlertBuilder.show();
     }
 }

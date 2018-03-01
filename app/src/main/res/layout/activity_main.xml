@@ -8,22 +8,22 @@
     tools:context="com.bryonnicoson.keyboardsamples.MainActivity">
 
     <EditText
-        android:inputType="phone"
         android:id="@+id/editText_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/enter_phone_number"
-        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="phone"
         app:layout_constraintEnd_toStartOf="@id/spinner_main"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/editText_main"
-        app:layout_constraintEnd_toStartOf="@id/button_main"
         android:id="@+id/spinner_main"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Spinner>
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/button_main"
+        app:layout_constraintStart_toEndOf="@id/editText_main"
+        app:layout_constraintTop_toTopOf="parent"></Spinner>
 
     <Button
         android:id="@+id/button_main"
@@ -31,23 +31,46 @@
         android:layout_height="wrap_content"
         android:onClick="showText"
         android:text="@string/button_show"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/top_message"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:paddingBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tap_to_test_alert"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button1"
+        app:layout_constraintTop_toBottomOf="@id/editText_main" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showAlert"
+        android:text="@string/alert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textView_label"
+        app:layout_constraintTop_toBottomOf="@id/top_message" />
+
+    <TextView
         android:id="@+id/textView_label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/phone_number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        app:layout_constraintStart_toEndOf="@id/textView_label"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/nothing_entered"
         android:id="@+id/textView_phone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/nothing_entered"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView_label" />
 
 </android.support.constraint.ConstraintLayout>
